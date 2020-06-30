@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/destination_events"
+        android:name="com.example.appclientes2.EventsFragments.EventsListFragment"
+        android:label="fragment_events_list"
+        tools:layout="@layout/fragment_events_list" >
+        <action
+            android:id="@+id/action_destination_events_to_specificEventFragment"
+            app:destination="@id/specificEventFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination_favorites"
+        android:name="com.example.appclientes2.ExtraFragments.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/destination_machines"
+        android:name="com.example.appclientes2.MachinesFragments.MachinesListFragment"
+        android:label="fragment_machines_list"
+        tools:layout="@layout/fragment_machines_list" >
+        <action
+            android:id="@+id/action_destination_machines_to_specificMachineFragment"
+            app:destination="@id/specificMachineFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination_profile"
+        android:name="com.example.appclientes2.ExtraFragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/destination_routines"
+        android:name="com.example.appclientes2.RoutinesFragments.RoutinesListFragment"
+        android:label="fragment_routines_list"
+        tools:layout="@layout/fragment_routines_list" >
+        <action
+            android:id="@+id/action_destination_routines_to_specificRoutineFragment"
+            app:destination="@id/specificRoutineFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/specificMachineFragment"
+        android:name="com.example.appclientes2.MachinesFragments.SpecificMachineFragment"
+        android:label="fragment_specific_machine"
+        tools:layout="@layout/fragment_specific_machine" />
+    <fragment
+        android:id="@+id/specificEventFragment"
+        android:name="com.example.appclientes2.EventsFragments.SpecificEventFragment"
+        android:label="fragment_specific_event"
+        tools:layout="@layout/fragment_specific_event" />
+    <fragment
+        android:id="@+id/specificRoutineFragment"
+        android:name="com.example.appclientes2.RoutinesFragments.SpecificRoutineFragment"
+        android:label="fragment_specific_routine"
+        tools:layout="@layout/fragment_specific_routine" >
+        <action
+            android:id="@+id/action_specificRoutineFragment_to_routineIniciatedFragment"
+            app:destination="@id/routineIniciatedFragment" />
+        <action
+            android:id="@+id/action_specificRoutineFragment_to_specificExerciseFragment"
+            app:destination="@id/specificExerciseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/routineIniciatedFragment"
+        android:name="com.example.appclientes2.RoutinesFragments.RoutineIniciatedFragment"
+        android:label="fragment_routine_iniciated"
+        tools:layout="@layout/fragment_routine_iniciated" />
+    <fragment
+        android:id="@+id/specificExerciseFragment"
+        android:name="com.example.appclientes2.RoutinesFragments.SpecificExerciseFragment"
+        android:label="fragment_specific_exercise"
+        tools:layout="@layout/fragment_specific_exercise" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.appclientes2.MainFragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_destination_routines"
+            app:destination="@id/destination_routines" />
+        <action
+            android:id="@+id/action_mainFragment_to_destination_machines"
+            app:destination="@id/destination_machines" />
+        <action
+            android:id="@+id/action_mainFragment_to_destination_profile"
+            app:destination="@id/destination_profile" />
+        <action
+            android:id="@+id/action_mainFragment_to_destination_favorites"
+            app:destination="@id/destination_favorites" />
+        <action
+            android:id="@+id/action_mainFragment_to_destination_events"
+            app:destination="@id/destination_events" />
+    </fragment>
+</navigation>
