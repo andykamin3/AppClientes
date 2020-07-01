@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.appclientes2.Entities.Routine
 import com.example.appclientes2.R
 
-class RoutinesListAdapter (private var routinesList: MutableList<Routine>,val adapterOnClick : () -> Unit) : RecyclerView.Adapter<RoutinesListAdapter.RoutineHolder>() {
+class RoutinesListAdapter (private var routinesList: MutableList<Routine>,val adapterOnClick : (Int) -> Unit) : RecyclerView.Adapter<RoutinesListAdapter.RoutineHolder>() {
 
     companion object {
 
@@ -52,7 +52,7 @@ class RoutinesListAdapter (private var routinesList: MutableList<Routine>,val ad
     override fun onBindViewHolder(holder: RoutineHolder, position: Int) {
         holder.bindItems(routinesList[position])
         holder.getCardLayout().setOnClickListener {
-            adapterOnClick()
+            adapterOnClick(position)
         }
 
 

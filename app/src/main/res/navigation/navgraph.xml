@@ -63,6 +63,9 @@
         <action
             android:id="@+id/action_specificRoutineFragment_to_specificExerciseFragment"
             app:destination="@id/specificExerciseFragment" />
+        <argument
+            android:name="strName"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/routineIniciatedFragment"

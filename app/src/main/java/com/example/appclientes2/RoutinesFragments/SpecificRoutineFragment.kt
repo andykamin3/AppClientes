@@ -5,14 +5,29 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.example.appclientes2.R
+import kotlinx.android.synthetic.main.fragment_specific_routine.*
 
 class SpecificRoutineFragment : Fragment() {
+
+    lateinit var v : View
+    lateinit var txt1 : TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_specific_routine, container, false)
+        v = inflater.inflate(R.layout.fragment_specific_routine, container, false)
+        txt1 = v.findViewById(R.id.txtSpecificRoutine)
+        return v
+    }
+
+
+    override fun onStart() {
+        super.onStart()
+
+        val strName = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strName
+        txtSpecificRoutine.text = strName
     }
 }
