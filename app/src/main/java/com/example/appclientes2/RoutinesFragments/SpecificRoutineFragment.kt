@@ -27,7 +27,7 @@ class SpecificRoutineFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        val strName = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strName
-        txtSpecificRoutine.text = strName
+        val strNameRoutine = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strNameRoutine
+        txt1.text = strNameRoutine
     }
 }

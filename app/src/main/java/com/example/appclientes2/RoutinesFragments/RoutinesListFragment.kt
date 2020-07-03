@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,6 +25,7 @@ class RoutinesListFragment : Fragment() {
     private lateinit var routinesListAdapter: RoutinesListAdapter
     private lateinit var gridLayoutManager : GridLayoutManager
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,6 +33,7 @@ class RoutinesListFragment : Fragment() {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_routines_list, container, false)
         recRoutines= v.findViewById(R.id.rec_routines)
+
         return v
     }
 
@@ -47,7 +50,7 @@ class RoutinesListFragment : Fragment() {
         recRoutines.setHasFixedSize(true)
         gridLayoutManager = GridLayoutManager(context,2, LinearLayoutManager.VERTICAL,false)
         recRoutines.layoutManager = gridLayoutManager
-        routinesListAdapter= RoutinesListAdapter(routine!!){position -> onItemClick(position)}
+        routinesListAdapter= RoutinesListAdapter(routine){position -> onItemClick(position)}
         //routinesListAdapter = RoutinesListAdapter(routine)
         recRoutines.adapter = routinesListAdapter
 

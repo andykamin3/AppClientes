@@ -25,13 +25,13 @@ class RoutinesListAdapter (private var routinesList: MutableList<Routine>,val ad
         }
 
         fun bindItems(model: Routine) {
-            val txt: TextView = view.findViewById(R.id.txt_name_item)
+            val txt: TextView = view.findViewById(R.id.txt_routine_item)
             txt.text = model.name
             // itemView.imageIv.setImageResource(model.image)
         }
 
         fun getCardLayout(): CardView {
-            return view.findViewById(R.id.card_package_item)
+            return view.findViewById(R.id.card_package_routine_item)
         }
     }
 

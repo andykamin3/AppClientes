@@ -46,7 +46,11 @@
         android:id="@+id/specificMachineFragment"
         android:name="com.example.appclientes2.MachinesFragments.SpecificMachineFragment"
         android:label="fragment_specific_machine"
-        tools:layout="@layout/fragment_specific_machine" />
+        tools:layout="@layout/fragment_specific_machine" >
+        <argument
+            android:name="strNameMachine"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/specificEventFragment"
         android:name="com.example.appclientes2.EventsFragments.SpecificEventFragment"
@@ -64,7 +68,7 @@
             android:id="@+id/action_specificRoutineFragment_to_specificExerciseFragment"
             app:destination="@id/specificExerciseFragment" />
         <argument
-            android:name="strName"
+            android:name="strNameRoutine"
             app:argType="string" />
     </fragment>
     <fragment
