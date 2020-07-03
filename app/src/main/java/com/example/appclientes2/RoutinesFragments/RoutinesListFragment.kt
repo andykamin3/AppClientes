@@ -37,9 +37,9 @@ class RoutinesListFragment : Fragment() {
         routine.add(Routine("Rutina 1", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/routine_mainfragment_photo.jpg?alt=media&token=fff3a62a-ca3a-4b3d-9650-d4d035fc65e2"))
         routine.add(Routine("Rutina 2", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/routine_mainfragment_photo.jpg?alt=media&token=fff3a62a-ca3a-4b3d-9650-d4d035fc65e2"))
         routine.add(Routine("Rutina 3", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/routine_mainfragment_photo.jpg?alt=media&token=fff3a62a-ca3a-4b3d-9650-d4d035fc65e2"))
-        /*routine.add(Routine("Rutina 4", "gs://appclientes-b9820.appspot.com/rutinas_lista_phhoto.jpg"))
-        routine.add(Routine("Rutina 5", "gs://appclientes-b9820.appspot.com/rutinas_lista_phhoto.jpg"))
-        routine.add(Routine("Rutina 6", "gs://appclientes-b9820.appspot.com/rutinas_lista_phhoto.jpg"))*/
+        routine.add(Routine("Rutina 4", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/rutinas_lista_phhoto.jpg?alt=media&token=13a83b1b-1a29-41de-a415-2b8571ac87cf"))
+        routine.add(Routine("Rutina 5", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/rutinas_lista_phhoto.jpg?alt=media&token=13a83b1b-1a29-41de-a415-2b8571ac87cf"))
+        routine.add(Routine("Rutina 6", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/rutinas_lista_phhoto.jpg?alt=media&token=13a83b1b-1a29-41de-a415-2b8571ac87cf"))
 
         return v
     }
@@ -60,9 +60,6 @@ class RoutinesListFragment : Fragment() {
         val action1to2 = RoutinesListFragmentDirections.actionDestinationRoutinesToSpecificRoutineFragment(
             routine[position].name,
             routine[position].imageUrl
-
-
-
         )
         v.findNavController().navigate(action1to2)
     }
