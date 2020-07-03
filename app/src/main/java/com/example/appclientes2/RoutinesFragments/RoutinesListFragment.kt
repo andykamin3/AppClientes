@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toolbar
+import android.widget.ImageView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +14,7 @@ import com.example.appclientes2.Adapters.RoutinesListAdapter
 import com.example.appclientes2.Entities.Routine
 import com.example.appclientes2.R
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.storage.FirebaseStorage
 
 class RoutinesListFragment : Fragment() {
 
@@ -25,7 +26,6 @@ class RoutinesListFragment : Fragment() {
     private lateinit var routinesListAdapter: RoutinesListAdapter
     private lateinit var gridLayoutManager : GridLayoutManager
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,33 +34,35 @@ class RoutinesListFragment : Fragment() {
         v = inflater.inflate(R.layout.fragment_routines_list, container, false)
         recRoutines= v.findViewById(R.id.rec_routines)
 
+        routine.add(Routine("Rutina 1", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/routine_mainfragment_photo.jpg?alt=media&token=fff3a62a-ca3a-4b3d-9650-d4d035fc65e2"))
+        routine.add(Routine("Rutina 2", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/routine_mainfragment_photo.jpg?alt=media&token=fff3a62a-ca3a-4b3d-9650-d4d035fc65e2"))
+        routine.add(Routine("Rutina 3", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/routine_mainfragment_photo.jpg?alt=media&token=fff3a62a-ca3a-4b3d-9650-d4d035fc65e2"))
+        /*routine.add(Routine("Rutina 4", "gs://appclientes-b9820.appspot.com/rutinas_lista_phhoto.jpg"))
+        routine.add(Routine("Rutina 5", "gs://appclientes-b9820.appspot.com/rutinas_lista_phhoto.jpg"))
+        routine.add(Routine("Rutina 6", "gs://appclientes-b9820.appspot.com/rutinas_lista_phhoto.jpg"))*/
+
         return v
     }
 
     override fun onStart() {
         super.onStart()
 
-        routine.add(Routine("Rutina 1"))
-        routine.add(Routine("Rutina 2"))
-        routine.add(Routine("Rutina 3"))
-        routine.add(Routine("Rutina 4"))
-        routine.add(Routine("Rutina 5"))
-        routine.add(Routine("Rutina 6"))
-
         recRoutines.setHasFixedSize(true)
         gridLayoutManager = GridLayoutManager(context,2, LinearLayoutManager.VERTICAL,false)
         recRoutines.layoutManager = gridLayoutManager
-        routinesListAdapter= RoutinesListAdapter(routine){position -> onItemClick(position)}
+        routinesListAdapter= RoutinesListAdapter(routine,requireContext()){position -> onItemClick(position)}
         //routinesListAdapter = RoutinesListAdapter(routine)
         recRoutines.adapter = routinesListAdapter
-
-    }
+        }
 
     public fun onItemClick(position : Int){
         Snackbar.make(v,"click", Snackbar.LENGTH_SHORT).show()
-
         val action1to2 = RoutinesListFragmentDirections.actionDestinationRoutinesToSpecificRoutineFragment(
-            routine[position].name
+            routine[position].name,
+            routine[position].imageUrl
+
+
+
         )
         v.findNavController().navigate(action1to2)
     }

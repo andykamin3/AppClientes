@@ -1,6 +1,7 @@
 package com.example.appclientes2.Entities
 
-class Routine(name: String?//, intensify : String?, bodyPart: String?, duration: Int?, image: String?
+class Routine(name: String?//, intensify : String?, bodyPart: String?, duration: Int?
+              ,imageUrl: String?
              //,professor: String, objective: String
              ) {
 
@@ -9,8 +10,8 @@ class Routine(name: String?//, intensify : String?, bodyPart: String?, duration:
     var bodyPart: String = "bodypart"
     lateinit var professor: String
     lateinit var objective: String
-    var duration: Int = 230
-    var image: String = "image" */
+    var duration: Int = 230 */
+    var imageUrl: String = "imageUrl"
 
     init{
         this.name = name!!
@@ -18,8 +19,8 @@ class Routine(name: String?//, intensify : String?, bodyPart: String?, duration:
         this.bodyPart = bodyPart!!
       //this.professor = professor
       //this.objective = objective
-        this.duration = duration!!
-        this.image = image!!
-        */
+        this.duration = duration!! */
+        this.imageUrl = imageUrl!!
+
     }
 }

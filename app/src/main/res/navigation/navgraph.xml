@@ -70,6 +70,9 @@
         <argument
             android:name="strNameRoutine"
             app:argType="string" />
+        <argument
+            android:name="strImageUrlRoutine"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/routineIniciatedFragment"
