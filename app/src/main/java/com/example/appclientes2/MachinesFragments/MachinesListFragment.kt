@@ -24,7 +24,7 @@ class MachinesListFragment : Fragment() {
     var machine: MutableList<Machine> = ArrayList<Machine>()
 
     private lateinit var machinesListAdapter: MachinesListAdapter
-    private lateinit var gridLayoutManager : GridLayoutManager
+    private lateinit var linearLayoutManager : LinearLayoutManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,8 +45,8 @@ class MachinesListFragment : Fragment() {
         machine.add(Machine("Maquina 6"))
 
         recMachines.setHasFixedSize(true)
-        gridLayoutManager = GridLayoutManager(context,2, LinearLayoutManager.VERTICAL,false)
-        recMachines.layoutManager = gridLayoutManager
+        linearLayoutManager = LinearLayoutManager(context)
+        recMachines.layoutManager = linearLayoutManager
         machinesListAdapter= MachinesListAdapter(machine){position -> onItemClick(position)}
         //routinesListAdapter = RoutinesListAdapter(routine)
         recMachines.adapter = machinesListAdapter

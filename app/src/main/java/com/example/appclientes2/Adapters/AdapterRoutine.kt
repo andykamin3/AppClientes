@@ -12,12 +12,8 @@ import com.example.appclientes2.Entities.Routine
 import com.example.appclientes2.GlideApp
 import com.example.appclientes2.R
 
-class RoutinesListAdapter(private var routinesList: MutableList<Routine>, val context: Context,
+class RoutinesListAdapter(private var routinesList: MutableList<Routine>, var context: Context,
 val adapterOnClick: (Int) -> Unit) : RecyclerView.Adapter<RoutinesListAdapter.RoutineHolder>(){
-
-    companion object {
-        private val TAG = "RoutineListAdapter"
-    }
 
     class RoutineHolder(v: View) : RecyclerView.ViewHolder(v) {
 
@@ -28,12 +24,18 @@ val adapterOnClick: (Int) -> Unit) : RecyclerView.Adapter<RoutinesListAdapter.Ro
         }
 
         fun bindItems(model: Routine, context: Context) {
-            val txt: TextView = view.findViewById(R.id.txt_routine_item)
-            txt.text = model.name
+            val txtName: TextView = view.findViewById(R.id.txt_routine_name)
+            txtName.text = model.name
             val imageRoutine : ImageView = view.findViewById(R.id.routineView)
             GlideApp.with(context)
                 .load(model.imageUrl)
                 .into(imageRoutine)
+            val txtIntensity: TextView = view.findViewById(R.id.txt_routine_intensity)
+            txtIntensity.text = model.intensity
+            val txtDuration: TextView = view.findViewById(R.id.txt_routine_duration)
+            txtDuration.text = model.duration.toString()
+            val txtBodypart: TextView = view.findViewById(R.id.txt_routine_bodypart)
+            txtBodypart.text = model.bodyPart
         }
 
         fun getCardLayout(): CardView {

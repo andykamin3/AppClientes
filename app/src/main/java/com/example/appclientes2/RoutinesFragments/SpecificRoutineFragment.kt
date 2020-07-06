@@ -17,7 +17,10 @@ import kotlinx.android.synthetic.main.fragment_specific_routine.*
 class SpecificRoutineFragment : Fragment() {
 
     lateinit var v : View
-    lateinit var txt1 : TextView
+    lateinit var txtNameSpecificRoutine : TextView
+    lateinit var txtBodypartSpecificRoutine : TextView
+    lateinit var txtIntensitySpecificRoutine : TextView
+    lateinit var txtDurationSpecificRoutine : TextView
     lateinit var specificRoutineIv : ImageView
 
     override fun onCreateView(
@@ -25,20 +28,33 @@ class SpecificRoutineFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         v = inflater.inflate(R.layout.fragment_specific_routine, container, false)
-        txt1 = v.findViewById(R.id.txtSpecificRoutine)
+        txtNameSpecificRoutine = v.findViewById(R.id.txtSpecificRoutineName)
+        txtBodypartSpecificRoutine = v.findViewById(R.id.txtSpecificRoutineBodypart)
+        txtDurationSpecificRoutine = v.findViewById(R.id.txtSpecificRoutineDuration)
+        txtIntensitySpecificRoutine = v.findViewById(R.id.txtSpecificRoutineIntensity)
         specificRoutineIv = v.findViewById(R.id.specificRoutineImageView)
         return v
     }
 
-
     override fun onStart() {
         super.onStart()
 
-        val strNameRoutine = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strNameRoutine
-        val strImageUrlRoutine = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strImageUrlRoutine
-        txt1.text = strNameRoutine
+        val strSpecificRoutineName = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strNameRoutine
+        val strSpecificRoutineImageUrl = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strImageUrlRoutine
+        val strSpecificRoutineIntensity = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strIntensityRoutine
+        val strSpecificRoutineBodypart = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strBodypartRoutine
+        val IntSpecificRoutineDuration = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).intDurationRoutine
+
+        txtNameSpecificRoutine.text = strSpecificRoutineName
+
         GlideApp.with(requireContext())
-            .load(strImageUrlRoutine)
+            .load(strSpecificRoutineImageUrl)
             .into(specificRoutineIv)
+
+        txtIntensitySpecificRoutine.text = strSpecificRoutineIntensity
+
+        txtBodypartSpecificRoutine.text = strSpecificRoutineBodypart
+
+        txtDurationSpecificRoutine.text = IntSpecificRoutineDuration.toString()
     }
 }

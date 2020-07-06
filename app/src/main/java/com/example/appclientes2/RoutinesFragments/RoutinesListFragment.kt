@@ -24,7 +24,7 @@ class RoutinesListFragment : Fragment() {
     var routine: MutableList<Routine> = ArrayList<Routine>()
 
     private lateinit var routinesListAdapter: RoutinesListAdapter
-    private lateinit var gridLayoutManager : GridLayoutManager
+    private lateinit var linearLayoutManager : LinearLayoutManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,12 +34,12 @@ class RoutinesListFragment : Fragment() {
         v = inflater.inflate(R.layout.fragment_routines_list, container, false)
         recRoutines= v.findViewById(R.id.rec_routines)
 
-        routine.add(Routine("Rutina 1", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/routine_mainfragment_photo.jpg?alt=media&token=fff3a62a-ca3a-4b3d-9650-d4d035fc65e2"))
-        routine.add(Routine("Rutina 2", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/routine_mainfragment_photo.jpg?alt=media&token=fff3a62a-ca3a-4b3d-9650-d4d035fc65e2"))
-        routine.add(Routine("Rutina 3", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/routine_mainfragment_photo.jpg?alt=media&token=fff3a62a-ca3a-4b3d-9650-d4d035fc65e2"))
-        routine.add(Routine("Rutina 4", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/rutinas_lista_phhoto.jpg?alt=media&token=13a83b1b-1a29-41de-a415-2b8571ac87cf"))
-        routine.add(Routine("Rutina 5", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/rutinas_lista_phhoto.jpg?alt=media&token=13a83b1b-1a29-41de-a415-2b8571ac87cf"))
-        routine.add(Routine("Rutina 6", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/rutinas_lista_phhoto.jpg?alt=media&token=13a83b1b-1a29-41de-a415-2b8571ac87cf"))
+        routine.add(Routine("Rutina 1", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/routine_mainfragment_photo.jpg?alt=media&token=fff3a62a-ca3a-4b3d-9650-d4d035fc65e2","Brazos",20,"Avanzado"))
+        routine.add(Routine("Rutina 2", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/routine_mainfragment_photo.jpg?alt=media&token=fff3a62a-ca3a-4b3d-9650-d4d035fc65e2","Pectorales",45,"Principante"))
+        routine.add(Routine("Rutina 3", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/routine_mainfragment_photo.jpg?alt=media&token=fff3a62a-ca3a-4b3d-9650-d4d035fc65e2","Abdominales",30,"Intermedio"))
+        routine.add(Routine("Rutina 4", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/rutinas_lista_phhoto.jpg?alt=media&token=13a83b1b-1a29-41de-a415-2b8571ac87cf","Piernas",60,"Avanzado"))
+        routine.add(Routine("Rutina 5", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/rutinas_lista_phhoto.jpg?alt=media&token=13a83b1b-1a29-41de-a415-2b8571ac87cf","Espalda",15,"Principiado"))
+        routine.add(Routine("Rutina 6", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/rutinas_lista_phhoto.jpg?alt=media&to<ken=13a83b1b-1a29-41de-a415-2b8571ac87cf","Brazos",90,"Intermedio"))
 
         return v
     }
@@ -48,8 +48,8 @@ class RoutinesListFragment : Fragment() {
         super.onStart()
 
         recRoutines.setHasFixedSize(true)
-        gridLayoutManager = GridLayoutManager(context,2, LinearLayoutManager.VERTICAL,false)
-        recRoutines.layoutManager = gridLayoutManager
+        linearLayoutManager = LinearLayoutManager(context)
+        recRoutines.layoutManager = linearLayoutManager
         routinesListAdapter= RoutinesListAdapter(routine,requireContext()){position -> onItemClick(position)}
         //routinesListAdapter = RoutinesListAdapter(routine)
         recRoutines.adapter = routinesListAdapter
@@ -59,7 +59,10 @@ class RoutinesListFragment : Fragment() {
         Snackbar.make(v,"click", Snackbar.LENGTH_SHORT).show()
         val action1to2 = RoutinesListFragmentDirections.actionDestinationRoutinesToSpecificRoutineFragment(
             routine[position].name,
-            routine[position].imageUrl
+            routine[position].imageUrl,
+            routine[position].intensity,
+            routine[position].duration,
+            routine[position].bodyPart
         )
         v.findNavController().navigate(action1to2)
     }
