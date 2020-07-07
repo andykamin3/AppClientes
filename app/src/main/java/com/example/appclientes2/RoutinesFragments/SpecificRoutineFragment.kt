@@ -20,7 +20,7 @@ class SpecificRoutineFragment : Fragment() {
     lateinit var v : View
     lateinit var txtNameSpecificRoutine : TextView
     lateinit var txtBodypartSpecificRoutine : TextView
-    lateinit var txtIntensitySpecificRoutine : TextView
+    lateinit var txtLevelSpecificRoutine : TextView
     lateinit var txtDurationSpecificRoutine : TextView
     lateinit var specificRoutineIv : ImageView
 
@@ -32,7 +32,7 @@ class SpecificRoutineFragment : Fragment() {
         txtNameSpecificRoutine = v.findViewById(R.id.txtSpecificRoutineName)
         txtBodypartSpecificRoutine = v.findViewById(R.id.txtSpecificRoutineBodypart)
         txtDurationSpecificRoutine = v.findViewById(R.id.txtSpecificRoutineDuration)
-        txtIntensitySpecificRoutine = v.findViewById(R.id.txtSpecificRoutineIntensity)
+        txtLevelSpecificRoutine = v.findViewById(R.id.txtSpecificRoutineLevel)
         specificRoutineIv = v.findViewById(R.id.specificRoutineImageView)
         return v
     }
@@ -42,7 +42,7 @@ class SpecificRoutineFragment : Fragment() {
 
         val strSpecificRoutineName = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strNameRoutine
         val strSpecificRoutineImageUrl = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strImageUrlRoutine
-        val strSpecificRoutineIntensity = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strIntensityRoutine
+        val strSpecificRoutineIntensity = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strLevelRoutine
         val strSpecificRoutineBodypart = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strBodypartRoutine
         val IntSpecificRoutineDuration = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).intDurationRoutine
 
@@ -52,7 +52,7 @@ class SpecificRoutineFragment : Fragment() {
             .load(strSpecificRoutineImageUrl)
             .into(specificRoutineIv)
 
-        txtIntensitySpecificRoutine.text = strSpecificRoutineIntensity
+        txtLevelSpecificRoutine.text = strSpecificRoutineIntensity
 
         txtBodypartSpecificRoutine.text = strSpecificRoutineBodypart
 

@@ -74,12 +74,11 @@
             android:name="strImageUrlRoutine"
             app:argType="string" />
         <argument
-            android:name="strIntensityRoutine"
-            app:argType="string" />
-        <argument
             android:name="IntDurationRoutine"
             app:argType="integer" />
         <argument android:name="strBodypartRoutine"
+            app:argType="string" />
+        <argument android:name="strLevelRoutine"
             app:argType="string" />
     </fragment>
     <fragment

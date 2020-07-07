@@ -59,6 +59,7 @@ class ProfileFragment : Fragment() {
         txtObjective.text = "Objetivo:  " + user.objective
         GlideApp.with(requireContext())
             .load(user.image)
+            .circleCrop()
             .into(ProfilseUserIv)
 
         /*btnChangeProfileData.setOnClickListener{
