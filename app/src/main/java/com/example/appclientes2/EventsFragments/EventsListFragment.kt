@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.appclientes2.MainActivity
 import com.example.appclientes2.R
 
 
@@ -21,4 +22,8 @@ class EventsListFragment : Fragment() {
         return v
     }
 
+    override fun onStart() {
+        super.onStart()
+        (requireActivity()as MainActivity).changeToolbarName("Eventos")
+    }
 }

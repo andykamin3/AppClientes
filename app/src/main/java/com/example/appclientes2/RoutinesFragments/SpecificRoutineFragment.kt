@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.example.appclientes2.GlideApp
+import com.example.appclientes2.MainActivity
 import com.example.appclientes2.R
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.fragment_specific_routine.*
@@ -56,5 +57,7 @@ class SpecificRoutineFragment : Fragment() {
         txtBodypartSpecificRoutine.text = strSpecificRoutineBodypart
 
         txtDurationSpecificRoutine.text = IntSpecificRoutineDuration.toString()
+
+        (requireActivity()as MainActivity).changeToolbarName(strSpecificRoutineName)
     }
 }

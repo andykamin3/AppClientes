@@ -11,6 +11,7 @@ import android.widget.ImageView
 import androidx.navigation.findNavController
 import com.bumptech.glide.Glide.with
 import com.example.appclientes2.GlideApp
+import com.example.appclientes2.MainActivity
 import com.example.appclientes2.MyGlideModuleApp
 
 import com.example.appclientes2.R
@@ -39,6 +40,7 @@ class MainFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        (requireActivity()as MainActivity).changeToolbarName("Inicio")
 
         GlideApp.with(requireActivity() as Context)
             .load("https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/routine_mainfragment_photo.jpg?alt=media&token=fff3a62a-ca3a-4b3d-9650-d4d035fc65e2")

@@ -11,6 +11,7 @@ import android.widget.TextView
 import com.example.appclientes2.Entities.Routine
 import com.example.appclientes2.Entities.User
 import com.example.appclientes2.GlideApp
+import com.example.appclientes2.MainActivity
 import com.example.appclientes2.R
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -27,7 +28,6 @@ class ProfileFragment : Fragment() {
     lateinit var btnChangeProfileData : Button
 
     lateinit var user : User
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,6 +50,7 @@ class ProfileFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        (requireActivity()as MainActivity).changeToolbarName("Perfil")
 
         txtName.text =  user.name
         txtBirthdate.text = "Fecha de nacimiento:  " + user.birthDate

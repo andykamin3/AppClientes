@@ -2,7 +2,7 @@ package com.example.appclientes2.Entities
 
 import android.widget.ListAdapter
 
-class User(name : String, birthDate : String, weight: Double, height: Int, objective: String,// favorite: ListAdapter,
+class User(name : String, birthDate : String, weight: Double, height: Int, objective: String,// favorite: ListAdapter,id: Int
            image: String) {
 
     lateinit var name: String
@@ -11,6 +11,7 @@ class User(name : String, birthDate : String, weight: Double, height: Int, objec
     var height: Int
     lateinit var objective: String
  //   lateinit var favorite: ListAdapter
+ //   lateinit var id : Int
     lateinit var image: String
 
     init{
@@ -20,6 +21,7 @@ class User(name : String, birthDate : String, weight: Double, height: Int, objec
         this.height = height
         this.objective = objective
 //        this.favorite = favorite
+        // this.id = id
         this.image = image
 
     }

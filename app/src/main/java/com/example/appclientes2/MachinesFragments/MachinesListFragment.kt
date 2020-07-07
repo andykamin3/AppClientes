@@ -13,6 +13,7 @@ import com.example.appclientes2.Adapters.MachinesListAdapter
 import com.example.appclientes2.Adapters.RoutinesListAdapter
 import com.example.appclientes2.Entities.Machine
 import com.example.appclientes2.Entities.Routine
+import com.example.appclientes2.MainActivity
 import com.example.appclientes2.R
 import com.google.android.material.snackbar.Snackbar
 
@@ -37,6 +38,7 @@ class MachinesListFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        (requireActivity()as MainActivity).changeToolbarName("Máquinas")
         machine.add(Machine("Maquina 1"))
         machine.add(Machine("Maquina 2"))
         machine.add(Machine("Maquina 3"))

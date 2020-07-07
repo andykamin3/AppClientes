@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.example.appclientes2.MainActivity
 import com.example.appclientes2.R
 import kotlinx.android.synthetic.main.fragment_specific_machine.*
 
@@ -28,5 +29,6 @@ class SpecificMachineFragment : Fragment() {
         super.onStart()
         val strNameMachine = SpecificMachineFragmentArgs.fromBundle(requireArguments()).strNameMachine
         txt1.text = strNameMachine
+        (requireActivity()as MainActivity).changeToolbarName(strNameMachine)
     }
 }

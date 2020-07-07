@@ -1,14 +1,15 @@
 package com.example.appclientes2.Entities
 
 class Machine(name: String?
-//, recommendedWeight: Double, bodyPart: String, repetitions: Int, image: String
+//, recommendedWeight: Double, bodyPart: String, repetitions: Int, image: String, id: Int
 ) {
 
      var name: String = ""
    /*var recommendedWeight : Double
     lateinit var bodyPart: String
     var repetitions: Int
-    lateinit var image: String*/
+    lateinit var image: String
+    lateinit var id: Int*/
 
     init{
         this.name = name!!
@@ -16,6 +17,7 @@ class Machine(name: String?
         this.bodyPart = bodyPart
         this.repetitions = repetitions
         this.image = image
+        this.id = id
 */
     }
 }

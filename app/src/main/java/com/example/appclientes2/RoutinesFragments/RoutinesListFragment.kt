@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appclientes2.Adapters.RoutinesListAdapter
 import com.example.appclientes2.Entities.Routine
+import com.example.appclientes2.MainActivity
 import com.example.appclientes2.R
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.storage.FirebaseStorage
@@ -46,6 +47,7 @@ class RoutinesListFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        (requireActivity()as MainActivity).changeToolbarName("Rutinas")
 
         recRoutines.setHasFixedSize(true)
         linearLayoutManager = LinearLayoutManager(context)
