@@ -7,7 +7,6 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appclientes2.Entities.Machine
-import com.example.appclientes2.Entities.Routine
 import com.example.appclientes2.R
 
 class MachinesListAdapter (private var machinesList: MutableList<Machine>, val adapterOnClick : (Int) -> Unit) : RecyclerView.Adapter<MachinesListAdapter.MachineHolder>() {
@@ -32,7 +31,7 @@ class MachinesListAdapter (private var machinesList: MutableList<Machine>, val a
         }
 
         fun getCardLayout(): CardView {
-            return view.findViewById(R.id.card_package_machine_item)
+            return view.findViewById(R.id.card_package_exercise_item)
         }
     }
 

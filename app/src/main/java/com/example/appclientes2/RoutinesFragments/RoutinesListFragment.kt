@@ -24,8 +24,8 @@ class RoutinesListFragment : Fragment() {
 
     var routine: MutableList<Routine> = ArrayList<Routine>()
 
-    private lateinit var routinesListAdapter: RoutinesListAdapter
-    private lateinit var linearLayoutManager : LinearLayoutManager
+    lateinit var routinesListAdapter: RoutinesListAdapter
+    lateinit var linearLayoutManager : LinearLayoutManager
 
 
     override fun onCreateView(
@@ -41,13 +41,23 @@ class RoutinesListFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        routine.add(Routine("Rutina 1", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/routine_mainfragment_photo.jpg?alt=media&token=fff3a62a-ca3a-4b3d-9650-d4d035fc65e2","Brazos",20,"Avanzado"))
-        routine.add(Routine("Rutina 2", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/routine_mainfragment_photo.jpg?alt=media&token=fff3a62a-ca3a-4b3d-9650-d4d035fc65e2","Pectorales",45,"Principante"))
-        routine.add(Routine("Rutina 3", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/routine_mainfragment_photo.jpg?alt=media&token=fff3a62a-ca3a-4b3d-9650-d4d035fc65e2","Abdominales",30,"Intermedio"))
-        routine.add(Routine("Rutina 4", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/rutinas_lista_phhoto.jpg?alt=media&token=13a83b1b-1a29-41de-a415-2b8571ac87cf","Piernas",60,"Avanzado"))
-        routine.add(Routine("Rutina 5", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/rutinas_lista_phhoto.jpg?alt=media&token=13a83b1b-1a29-41de-a415-2b8571ac87cf","Espalda",15,"Principiado"))
-        routine.add(Routine("Rutina 6", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/rutinas_lista_phhoto.jpg?alt=media&to<ken=13a83b1b-1a29-41de-a415-2b8571ac87cf","Brazos",90,"Intermedio"))
+        routine.add(Routine(1,"Rutina 1", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/routine_mainfragment_photo.jpg?alt=media&token=fff3a62a-ca3a-4b3d-9650-d4d035fc65e2"
+            ,"Brazos",20,"Avanzado","Profesor 1"))
 
+        routine.add(Routine(2,"Rutina 2", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/routine_mainfragment_photo.jpg?alt=media&token=fff3a62a-ca3a-4b3d-9650-d4d035fc65e2"
+            ,"Pectorales",45,"Principante","Profesor 2"))
+
+        routine.add(Routine(3,"Rutina 3", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/routine_mainfragment_photo.jpg?alt=media&token=fff3a62a-ca3a-4b3d-9650-d4d035fc65e2"
+            ,"Abdominales",30,"Intermedio","Profesor 3"))
+
+        routine.add(Routine(4,"Rutina 4", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/rutinas_lista_phhoto.jpg?alt=media&token=13a83b1b-1a29-41de-a415-2b8571ac87cf"
+            ,"Piernas",60,"Avanzado","Profesor 3"))
+
+        routine.add(Routine(5,"Rutina 5", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/rutinas_lista_phhoto.jpg?alt=media&token=13a83b1b-1a29-41de-a415-2b8571ac87cf"
+            ,"Espalda",15,"Principiado","Profesor 2"))
+
+        routine.add(Routine(6,"Rutina 6", "https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/rutinas_lista_phhoto.jpg?alt=media&to<ken=13a83b1b-1a29-41de-a415-2b8571ac87cf"
+            ,"Brazos",90,"Intermedio","Profesor 1"))
     }
 
     override fun onStart() {

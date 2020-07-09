@@ -25,9 +25,7 @@ class MainActivity : AppCompatActivity(), ToolbarName{
         setSupportActionBar(toolbar)
         navigationView.setupWithNavController(navController)
         NavigationUI.setupActionBarWithNavController(this, navController, drawer)
-
     }
-
 
     override fun onSupportNavigateUp(): Boolean {
         return NavigationUI.navigateUp(navController, drawer)
