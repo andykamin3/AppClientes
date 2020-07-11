@@ -39,12 +39,12 @@ class MachinesListFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         (requireActivity()as MainActivity).changeToolbarName("Máquinas")
-        machine.add(Machine("Maquina 1"))
-        machine.add(Machine("Maquina 2"))
-        machine.add(Machine("Maquina 3"))
-        machine.add(Machine("Maquina 4"))
-        machine.add(Machine("Maquina 5"))
-        machine.add(Machine("Maquina 6"))
+      /*  machine.add(Machine(1, "Maquina 1", "50kg"))
+        machine.add(Machine(2, "Maquina 2", ""))
+        machine.add(Machine(3, "Maquina 3", ""))
+        machine.add(Machine(4, "Maquina 4", ""))
+        machine.add(Machine(5, "Maquina 5", ""))
+        machine.add(Machine(6, "Maquina 6", ""))*/
 
         recMachines.setHasFixedSize(true)
         linearLayoutManager = LinearLayoutManager(context)

@@ -1,23 +1,23 @@
 package com.example.appclientes2.Entities
 
-class Machine(name: String?
-//, recommendedWeight: Double, bodyPart: String, repetitions: Int, image: String, id: Int
+class Machine(id: Int?, name: String?, recommendedWeight: String?, bodyPart: String?, repetitions: Int?, imageUrl: String?, level : Int?
 ) {
 
-     var name: String = ""
-   /*var recommendedWeight : Double
-    lateinit var bodyPart: String
-    var repetitions: Int
-    lateinit var image: String
-    lateinit var id: Int*/
+     var name: String = "Nombre"
+     var recommendedWeight : String = "25,5 kg"
+     var bodyPart: String = "Parte del cuerpo"
+     var repetitions: Int = 12
+     var imageUrl: String = "imageUrl"
+     var level: Int = 1
+     var id: Int = 1
 
     init{
         this.name = name!!
-        /*this.recommendedWeight = recommendedWeight
-        this.bodyPart = bodyPart
-        this.repetitions = repetitions
-        this.image = image
-        this.id = id
-*/
+        this.recommendedWeight = recommendedWeight!!
+        this.bodyPart = bodyPart!!
+        this.repetitions = repetitions!!
+        this.imageUrl = imageUrl!!
+        this.level = level!!
+        this.id = id!!
     }
 }

@@ -5,11 +5,11 @@
     android:id="@+id/card_package_routine_item"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:background="@color/colorWhite"
     android:layout_margin="8dp"
+    android:background="@color/colorWhite"
     android:backgroundTintMode="add"
-    app:cardElevation="8dp"
-    >
+    app:cardBackgroundColor="#000000"
+    app:cardElevation="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -53,12 +53,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="40dp"
             android:text="Brazos"
             android:textColor="@color/colorBlack"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/txt_routine_duration"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageAddFavorite"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
@@ -96,6 +96,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_launcher_foreground" />
+
+        <ImageView
+            android:id="@+id/imageAddFavorite"
+            android:layout_width="30dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="#FFFFFF"
+            android:foregroundTint="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/txt_routine_duration"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_baseline_favorite_24"
+            tools:srcCompat="@drawable/ic_baseline_favorite_24" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
