@@ -73,20 +73,20 @@ class SpecificRoutineFragment : Fragment() {
 
         val strSpecificRoutineName = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strNameRoutine
         val strSpecificRoutineImageUrl = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strImageUrlRoutine
-        val strSpecificRoutineIntensity = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strLevelRoutine
+        val strSpecificRoutineLevel = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strLevelRoutine
         val strSpecificRoutineBodypart = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strBodypartRoutine
-        val IntSpecificRoutineDuration = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).intDurationRoutine
+        val strSpecificRoutineDuration = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).strDurationRoutine
 
         GlideApp.with(requireContext())
         .load(strSpecificRoutineImageUrl)
         .circleCrop()
         .into(specificRoutineIv)
 
-        txtLevelSpecificRoutine.text = strSpecificRoutineIntensity
+        txtLevelSpecificRoutine.text = strSpecificRoutineLevel
 
         txtBodypartSpecificRoutine.text = strSpecificRoutineBodypart
 
-        txtDurationSpecificRoutine.text = IntSpecificRoutineDuration.toString()
+        txtDurationSpecificRoutine.text = strSpecificRoutineDuration.toString()
 
         (requireActivity()as MainActivity).changeToolbarName(strSpecificRoutineName)
     }

@@ -3,7 +3,7 @@ package com.example.appclientes2.Entities
 import android.widget.ListAdapter
 
 class User(name : String, birthDate : String, weight: Double, height: Int, objective: String,// favorite: ListAdapter,id: Int
-           image: String) {
+           image: String, localidad : String) {
 
     lateinit var name: String
     lateinit var birthDate: String
@@ -13,6 +13,7 @@ class User(name : String, birthDate : String, weight: Double, height: Int, objec
  //   lateinit var favorite: ListAdapter
  //   lateinit var id : Int
     lateinit var image: String
+    lateinit var localidad: String
 
     init{
         this.name = name
@@ -23,6 +24,7 @@ class User(name : String, birthDate : String, weight: Double, height: Int, objec
 //        this.favorite = favorite
         // this.id = id
         this.image = image
+        this.localidad= localidad
 
     }
 }

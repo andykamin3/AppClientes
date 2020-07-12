@@ -4,4 +4,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="buttonChangeProfileData">CHANGE MY DATA</string>
     <string name="buttonSignOff">SIGN OFF</string>
+    <string name="textviewObjective">Localidad:%1$s</string>
+    <string name="textviewHeight">Altura:%1$s</string>
+    <string name="textviewWeight">Peso:%1$s</string>
+    <string name="textviewBirthdate">Fecha de nacimiento:%1$s</string>
+
 </resources>

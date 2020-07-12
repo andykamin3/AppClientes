@@ -40,10 +40,9 @@ class ProfileFragment : Fragment() {
         txtWeight = v.findViewById(R.id.textViewWeight)
         txtHeight = v.findViewById(R.id.textViewHeight)
         txtObjective = v.findViewById(R.id.textViewObjective)
-        btnSignOff = v.findViewById(R.id.buttonSignOff)
-        btnChangeProfileData = v.findViewById(R.id.buttonChangeProfileData)
 
-        user = User("Usuario 1", "28/02/97",100.42,194,"Disminuir grasa corporal","https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/User1.jpg?alt=media&token=153b6f2f-d74e-4afb-b7ef-1c0319f3b996")
+
+        user = User("Alejandro Magno", "28/02/97",100.42,194,"Disminuir grasa corporal","https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/User1.jpg?alt=media&token=153b6f2f-d74e-4afb-b7ef-1c0319f3b996","Buenos Aires")
 
         return v
     }
@@ -53,10 +52,10 @@ class ProfileFragment : Fragment() {
         (requireActivity()as MainActivity).changeToolbarName("Perfil")
 
         txtName.text =  user.name
-        txtBirthdate.text = "Fecha de nacimiento:  " + user.birthDate
-        txtWeight.text = "Peso:  " + user.weight.toString()
-        txtHeight.text = "Altura:  " + user.height.toString()
-        txtObjective.text = "Objetivo:  " + user.objective
+        txtBirthdate.text = requireContext().getString(R.string.textviewBirthdate,user.birthDate)
+        txtWeight.text = requireContext().getString(R.string.textviewWeight,user.weight.toString())
+        txtHeight.text = requireContext().getString(R.string.textviewHeight,user.height.toString())
+        txtObjective.text = requireContext().getString(R.string.textviewObjective,user.localidad)
         GlideApp.with(requireContext())
             .load(user.image)
             .circleCrop()
