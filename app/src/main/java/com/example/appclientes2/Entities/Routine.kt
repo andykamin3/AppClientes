@@ -1,10 +1,12 @@
+
 package com.example.appclientes2.Entities
 
 import android.os.Parcel
 import android.os.Parcelable
 
-class Routine(var id: Int, var name: String, var imageUrl: String, var bodyPart: String, var duration: String, var level: String, var professor: String, var exercisesList: ArrayList<Exercise> //, intensity : String?
+class Routine(var id: Int, var name: String, var bodyPart: String, var duration: String, var level: Int, var professor: String, var imageUrl: String, var exercisesList: ArrayList<Exercise> //, intensity : String?
 ) : Parcelable {
+
     override fun equals(other: Any?): Boolean {
         if (other is Routine) {
             return this.id == (other).id
@@ -21,7 +23,7 @@ class Routine(var id: Int, var name: String, var imageUrl: String, var bodyPart:
         source.readString()!!,
         source.readString()!!,
         source.readString()!!,
-        source.readString()!!,
+        source.readInt(),
         source.readString()!!,
         source.readString()!!,
         ArrayList<Exercise>().apply { source.readList(this as List<*>, Exercise::class.java.classLoader) }
@@ -35,7 +37,7 @@ class Routine(var id: Int, var name: String, var imageUrl: String, var bodyPart:
         writeString(imageUrl)
         writeString(bodyPart)
         writeString(duration)
-        writeString(level)
+        writeString(level.toString())
         writeString(professor)
         writeList(exercisesList as List<*>?)
     }

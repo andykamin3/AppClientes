@@ -21,7 +21,7 @@ class SpecificRoutineFragment : Fragment() {
 
     lateinit var v : View
     lateinit var txtBodypartSpecificRoutine : TextView
-    lateinit var txtLevelSpecificRoutine : TextView
+    lateinit var imageViewLevelSpecificRoutine : ImageView
     lateinit var txtDurationSpecificRoutine : TextView
     lateinit var specificRoutineIv : ImageView
 
@@ -37,7 +37,7 @@ class SpecificRoutineFragment : Fragment() {
         v = inflater.inflate(R.layout.fragment_specific_routine, container, false)
         txtBodypartSpecificRoutine = v.findViewById(R.id.txtSpecificRoutineBodypart)
         txtDurationSpecificRoutine = v.findViewById(R.id.txtSpecificRoutineDuration)
-        txtLevelSpecificRoutine = v.findViewById(R.id.txtSpecificRoutineLevel)
+        imageViewLevelSpecificRoutine = v.findViewById(R.id.imageViewSpecificRoutineLevel)
         specificRoutineIv = v.findViewById(R.id.specificRoutineImageView)
         recExercises = v.findViewById(R.id.rec_exercises)
         return v
@@ -48,13 +48,12 @@ class SpecificRoutineFragment : Fragment() {
 
         val routine = SpecificRoutineFragmentArgs.fromBundle(requireArguments()).routine
 
-
         GlideApp.with(requireContext())
         .load(routine.imageUrl)
         .circleCrop()
         .into(specificRoutineIv)
 
-        txtLevelSpecificRoutine.text = routine.level
+        imageViewLevelSpecificRoutine.setImageResource(routine.level)
 
         txtBodypartSpecificRoutine.text = routine.bodyPart
 

@@ -32,21 +32,6 @@
             app:layout_constraintStart_toEndOf="@+id/routineView"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txt_routine_level"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="8dp"
-            android:text="Intensidad"
-            android:textColor="@color/colorBlack"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/routineView"
-            app:layout_constraintTop_toBottomOf="@+id/txt_routine_name"
-            app:layout_constraintVertical_bias="1.0" />
-
 
         <TextView
             android:id="@+id/txt_routine_bodypart"
@@ -58,9 +43,7 @@
             android:textColor="@color/colorBlack"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/txt_routine_level" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/txt_routine_duration"
@@ -85,7 +68,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            app:srcCompat="@drawable/ic_launcher_background" />
 
         <ImageView
             android:id="@+id/imageAddFavorite"
@@ -101,6 +84,17 @@
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/ic_baseline_favorite_24"
             tools:srcCompat="@drawable/ic_baseline_favorite_24" />
+
+        <ImageView
+            android:id="@+id/imageViewLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/routineView"
+            app:layout_constraintTop_toBottomOf="@+id/txt_routine_name"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/ic_launcher_background" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
