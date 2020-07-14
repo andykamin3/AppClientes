@@ -14,7 +14,7 @@ import com.example.appclientes2.MyGlideModuleApp
 import com.example.appclientes2.R
 
 class RoutinesListAdapter(private var routinesList: MutableList<Routine>, var context: Context,
-val adapterOnClick: (Int) -> Unit) : RecyclerView.Adapter<RoutinesListAdapter.RoutineHolder>(){
+val adapterOnClick: (Int) -> Unit, val toggleFavorites : (Routine) -> Unit) : RecyclerView.Adapter<RoutinesListAdapter.RoutineHolder>(){
 
     class RoutineHolder(v: View) : RecyclerView.ViewHolder(v) {
 
@@ -24,7 +24,7 @@ val adapterOnClick: (Int) -> Unit) : RecyclerView.Adapter<RoutinesListAdapter.Ro
             this.view = v
         }
 
-        fun bindItems(model: Routine, context: Context) {
+        fun bindItems(model: Routine, context: Context, toggleFavorites: (Routine) -> Unit) {
             val txtName: TextView = view.findViewById(R.id.txt_routine_name)
             txtName.text = model.name
             val imageRoutine : ImageView = view.findViewById(R.id.routineView)
@@ -38,6 +38,10 @@ val adapterOnClick: (Int) -> Unit) : RecyclerView.Adapter<RoutinesListAdapter.Ro
             txtDuration.text = model.duration.toString()
             val txtBodypart: TextView = view.findViewById(R.id.txt_routine_bodypart)
             txtBodypart.text = model.bodyPart
+            val imageAddFavoriteRoutine : ImageView = view.findViewById(R.id.imageAddFavorite)
+            imageAddFavoriteRoutine.setOnClickListener{
+            toggleFavorites(model)
+            }
         }
 
         fun getCardLayout(): CardView {
@@ -60,7 +64,7 @@ val adapterOnClick: (Int) -> Unit) : RecyclerView.Adapter<RoutinesListAdapter.Ro
     }
 
     override fun onBindViewHolder(holder: RoutineHolder, position: Int) {
-        holder.bindItems(routinesList[position], context)
+        holder.bindItems(routinesList[position], context, toggleFavorites)
         holder.getCardLayout().setOnClickListener {
             adapterOnClick(position)
         }

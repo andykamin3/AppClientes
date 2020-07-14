@@ -14,7 +14,7 @@ import com.example.appclientes2.GlideApp
 import com.example.appclientes2.R
 
 class ExercisesListAdapter(private var exerciseList: MutableList<Exercise>, var context : Context,
-val adapterOnClick: (Int) -> Unit) : RecyclerView.Adapter<ExercisesListAdapter.ExerciseHolder>(){
+val adapterOnClick: (Exercise) -> Unit) : RecyclerView.Adapter<ExercisesListAdapter.ExerciseHolder>(){
 
     class ExerciseHolder(v : View) : RecyclerView.ViewHolder(v){
 
@@ -60,7 +60,7 @@ val adapterOnClick: (Int) -> Unit) : RecyclerView.Adapter<ExercisesListAdapter.E
     override fun onBindViewHolder(holder: ExercisesListAdapter.ExerciseHolder, position: Int) {
         holder.bindItems(exerciseList[position], context)
         holder.getCardLayout().setOnClickListener {
-            adapterOnClick(position)
+            adapterOnClick(exerciseList[position])
         }
     }
 

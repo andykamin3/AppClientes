@@ -15,7 +15,7 @@
         android:layout_marginTop="16dp"
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintHorizontal_bias="0.232"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,6 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textAlignment="center"
         android:textColor="@color/colorBlack"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/CardBirthdate"
@@ -48,10 +49,10 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textViewObjective"
+                android:id="@+id/textViewLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/textviewObjective"
+                android:text="@string/textviewLocation"
                 android:textColor="@color/colorBlack"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -160,11 +161,27 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:clickable="true"
-        android:src="@android:drawable/ic_menu_edit"
+        android:src="@drawable/ic_baseline_edit_24"
         app:backgroundTint="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/CardBirthdate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.723"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toEndOf="@+id/imageViewUser"
+        app:layout_constraintTop_toBottomOf="@+id/fab_exit"
+        app:layout_constraintVertical_bias="0.314" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorPrimary"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_exit_to_app_24"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="auto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.751"
         app:layout_constraintStart_toEndOf="@+id/imageViewUser"
         app:layout_constraintTop_toTopOf="parent" />
 

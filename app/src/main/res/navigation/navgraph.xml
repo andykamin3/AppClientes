@@ -68,18 +68,8 @@
             android:id="@+id/action_specificRoutineFragment_to_specificExerciseFragment"
             app:destination="@id/specificExerciseFragment" />
         <argument
-            android:name="strNameRoutine"
-            app:argType="string" />
-        <argument
-            android:name="strImageUrlRoutine"
-            app:argType="string" />
-        <argument
-            android:name="strDurationRoutine"
-            app:argType="string" />
-        <argument android:name="strBodypartRoutine"
-            app:argType="string" />
-        <argument android:name="strLevelRoutine"
-            app:argType="string" />
+            android:name="routine"
+            app:argType="com.example.appclientes2.Entities.Routine" />
     </fragment>
     <fragment
         android:id="@+id/routineIniciatedFragment"

@@ -43,4 +43,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButtonMachines" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlack"
+        android:text="@string/textviewRoutinesMain"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonRoutines"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textviewMachinesMain"
+        android:background="@color/colorBlack"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonMachines"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonRoutines" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textviewEventsMain"
+        android:textAllCaps="true"
+        android:background="@color/colorBlack"
+        android:textColor="@color/colorWhite"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonEvents"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonMachines" />
 </androidx.constraintlayout.widget.ConstraintLayout>

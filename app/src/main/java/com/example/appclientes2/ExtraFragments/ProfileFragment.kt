@@ -13,7 +13,6 @@ import com.example.appclientes2.Entities.User
 import com.example.appclientes2.GlideApp
 import com.example.appclientes2.MainActivity
 import com.example.appclientes2.R
-import com.google.firebase.firestore.FirebaseFirestore
 
 class ProfileFragment : Fragment() {
 
@@ -23,7 +22,7 @@ class ProfileFragment : Fragment() {
     lateinit var txtBirthdate : TextView
     lateinit var txtWeight : TextView
     lateinit var txtHeight : TextView
-    lateinit var txtObjective : TextView
+    lateinit var txtLocation : TextView
     lateinit var btnSignOff : Button
     lateinit var btnChangeProfileData : Button
 
@@ -39,10 +38,10 @@ class ProfileFragment : Fragment() {
         txtBirthdate = v.findViewById(R.id.textViewBirthdate)
         txtWeight = v.findViewById(R.id.textViewWeight)
         txtHeight = v.findViewById(R.id.textViewHeight)
-        txtObjective = v.findViewById(R.id.textViewObjective)
+        txtLocation = v.findViewById(R.id.textViewLocation)
 
-
-        user = User("Alejandro Magno", "28/02/97",100.42,194,"Disminuir grasa corporal","https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/User1.jpg?alt=media&token=153b6f2f-d74e-4afb-b7ef-1c0319f3b996","Buenos Aires")
+        user = User("Alejandro Magno", "28/02/97",100.42,194,"Disminuir grasa corporal",
+            mutableListOf(),"https://firebasestorage.googleapis.com/v0/b/appclientes-b9820.appspot.com/o/User1.jpg?alt=media&token=153b6f2f-d74e-4afb-b7ef-1c0319f3b996","Buenos Aires")
 
         return v
     }
@@ -51,11 +50,11 @@ class ProfileFragment : Fragment() {
         super.onStart()
         (requireActivity()as MainActivity).changeToolbarName("Perfil")
 
-        txtName.text =  user.name
+        txtName.text = user.name
         txtBirthdate.text = requireContext().getString(R.string.textviewBirthdate,user.birthDate)
         txtWeight.text = requireContext().getString(R.string.textviewWeight,user.weight.toString())
         txtHeight.text = requireContext().getString(R.string.textviewHeight,user.height.toString())
-        txtObjective.text = requireContext().getString(R.string.textviewObjective,user.localidad)
+        txtLocation.text = requireContext().getString(R.string.textviewLocation,user.location)
         GlideApp.with(requireContext())
             .load(user.image)
             .circleCrop()
